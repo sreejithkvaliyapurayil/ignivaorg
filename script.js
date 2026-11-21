@@ -8,9 +8,7 @@ function setMenu(open) {
 
 menu.hidden = false;
 nav.classList.add('collapsible');
-menu.addEventListener('click', () => {
-  setMenu(menu.getAttribute('aria-expanded') === 'false');
-});
+menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') === 'false'));
 nav.addEventListener('click', (event) => {
   if (event.target.closest('a')) setMenu(false);
 });
@@ -23,26 +21,35 @@ document.addEventListener('keydown', (event) => {
 
 const filters = document.querySelector('#filters');
 if (filters) {
-  const filterButtons = Array.from(filters.querySelectorAll('button'));
-  const projects = Array.from(document.querySelectorAll('.project[data-sector]'));
+  const buttons = Array.from(filters.querySelectorAll('button'));
+  const cards = Array.from(document.querySelectorAll('[data-sector]'));
   const count = document.querySelector('#project-count');
 
+  function showSector(sector) {
+    buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.filter === sector)));
+    cards.forEach((card) => {
+      card.hidden = sector !== 'all' && card.dataset.sector !== sector;
+    });
+    const total = cards.filter((card) => !card.hidden).length;
+    count.textContent = total === 1 ? '1 project' : total + ' projects';
+  }
+
+  const sector = new URLSearchParams(location.search).get('sector');
+  showSector(buttons.some((button) => button.dataset.filter === sector) ? sector : 'all');
   filters.hidden = false;
   filters.addEventListener('click', (event) => {
-    const selected = event.target.closest('button[data-filter]');
-    if (!selected) return;
+    const button = event.target.closest('[data-filter]');
+    if (button) showSector(button.dataset.filter);
+  });
+}
 
-    filterButtons.forEach((button) => {
-      button.setAttribute('aria-pressed', String(button === selected));
-    });
-
-    let visible = 0;
-    projects.forEach((project) => {
-      project.hidden = selected.dataset.filter !== 'all'
-        && project.dataset.sector !== selected.dataset.filter;
-      if (!project.hidden) visible += 1;
-    });
-
-    count.textContent = visible === 1 ? '1 project shown' : visible + ' projects shown';
+const form = document.querySelector('#enquiry');
+if (form) {
+  form.hidden = false;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const subject = 'IGNIVA Group enquiry — ' + form.querySelector('#interest').value;
+    const body = 'Name: ' + form.querySelector('#name').value.trim() + '\n\n' + form.querySelector('#message').value.trim();
+    location.href = 'mailto:info@igniva.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 }
