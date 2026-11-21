@@ -4,62 +4,67 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071e27">
-  <meta name="description" content="Meet Nijesh Puthalath, Chairman and Managing Director of IGNIVA Group, and explore the Kerala-based group’s business portfolio and future developments.">
+  <meta name="description" content="Explore IGNIVA Group’s real estate and infrastructure portfolio in Kerala, from convention venues and hospitality to the proposed IGNIVA Tech Island in Kochi.">
   <link rel="canonical" href="https://www.igniva.org/">
-  <title>Nijesh Puthalath | IGNIVA Group</title>
+  <title>IGNIVA Group | Real Estate &amp; Infrastructure in Kerala</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IGNIVA Group | Real Estate &amp; Infrastructure in Kerala">
+  <meta property="og:image" content="https://www.igniva.org/assets/tech-island-hero.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
 <a class="skip" href="#main">Skip to content</a>
-<header class="dark">
+<header>
   <div class="wrap header">
-    <a href="#" class="brand" aria-label="IGNIVA Group home"><img src="assets/igniva-group.png" alt="IGNIVA Group" width="184" height="49"></a>
+    <a href="#top" class="brand" aria-label="IGNIVA Group home"><img src="assets/igniva-group.png" alt="IGNIVA Group" width="184" height="49"></a>
     <button id="menu" type="button" aria-controls="nav" aria-expanded="false" hidden>Menu</button>
     <nav id="nav" aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#portfolio">Our businesses</a>
       <a href="#leadership">Leadership</a>
-      <a href="#portfolio">Portfolio</a>
       <a href="#vision">Future vision</a>
-      <a href="#contact">Contact</a>
     </nav>
+    <a class="header-cta" href="#contact">Enquire</a>
   </div>
 </header>
 <main id="main">
-  <section class="hero dark">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">IGNIVA Group · Kerala, India</p>
-        <h1>Nijesh<br><em>Puthalath</em></h1>
-        <p class="role">Chairman &amp; Managing Director</p>
-        <p class="lede">Entrepreneur, investor and infrastructure developer building destinations that bring business together.</p>
-        <a class="button" href="#leadership">Explore the leadership profile</a>
-      </div>
-      <figure class="portrait">
-        <img src="assets/nijesh-puthalath.webp" alt="Nijesh Puthalath" width="1000" height="1500" fetchpriority="high">
-      </figure>
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-image" src="assets/tech-island-hero.webp" alt="" fetchpriority="high">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Real estate &amp; infrastructure · Kerala</p>
+      <h1 id="hero-title">Building places<br>for <em>business to grow.</em></h1>
+      <p class="lede">From trade and convention venues to hospitality, retail and digital infrastructure, explore how IGNIVA Group develops destinations across Kerala.</p>
+      <a class="button" href="#projects">Explore our projects</a>
     </div>
+    <p class="hero-credit">IGNIVA Tech Island, Kochi · Proposed development concept</p>
   </section>
-  <section id="leadership" class="section">
+  <section class="section" id="projects">
     <div class="wrap">
-      <p class="eyebrow">Leadership</p>
-      <div class="split">
-        <h2>Building destinations that <em>bring business together.</em></h2>
-        <div>
-          <p>Nijesh Puthalath established IGNIVA Group in 2015. His work focuses on developing commercial assets and integrated destinations for business, commerce, entertainment and everyday life.</p>
-          <p>Based in Kerala, the group spans convention and trade centres, hospitality, logistics, commercial destinations and technology retail. His approach combines long-term asset creation with strategic investment, commercial partnerships and professional management.</p>
-          <p>An MBA graduate from London, he brings experience in corporate banking, financial services, business development and investments. He is active in the startup ecosystems of India and the UAE, with interests in strategic partnerships, early-stage funding, hospitality and brand expansion.</p>
-        </div>
+      <p class="eyebrow">Selected projects</p>
+      <div class="split intro"><h2>Explore the<br>IGNIVA portfolio.</h2><p>Discover our trade, residential and hospitality projects, along with plans for a technology campus in Kochi.</p></div>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects by sector" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">All projects</button>
+        <button type="button" data-filter="trade" aria-pressed="false">Convention</button>
+        <button type="button" data-filter="residential" aria-pressed="false">Residential</button>
+        <button type="button" data-filter="hospitality" aria-pressed="false">Hospitality</button>
+        <button type="button" data-filter="technology" aria-pressed="false">Technology</button>
       </div>
-      <dl class="metrics">
-        <div><dt>2015</dt><dd>Group established</dd></div>
-        <div><dt>Kerala</dt><dd>Headquarters</dd></div>
-        <div><dt>Five</dt><dd>Business verticals</dd></div>
-      </dl>
+      <p class="sr-only" id="project-count" role="status"></p>
+      <div class="project-grid">
+        <article class="project" data-sector="trade"><img src="assets/calicut-trade-centre.webp" alt="Project image for Calicut Trade Centre" loading="lazy"><div><p class="eyebrow">Convention · Kozhikode</p><h3>Calicut Trade Centre</h3><p>A venue for trade exhibitions, corporate gatherings and events.</p><a class="project-link" href="mailto:info@igniva.org?subject=Calicut%20Trade%20Centre%20enquiry">Enquire about the venue</a></div></article>
+        <article class="project" data-sector="residential"><img src="assets/igniva-scotlands.webp" alt="Project image for IGNIVA Scotlands" loading="lazy"><div><p class="eyebrow">Residential</p><h3>IGNIVA Scotlands</h3><p>A residential development listed in IGNIVA’s real estate portfolio.</p><a class="project-link" href="mailto:info@igniva.org?subject=IGNIVA%20Scotlands%20enquiry">Enquire about Scotlands</a></div></article>
+        <article class="project" data-sector="hospitality"><img src="assets/airport-hotel.webp" alt="Project image for IGNIVA Airport Hotel" loading="lazy"><div><p class="eyebrow">Hospitality</p><h3>IGNIVA Airport Hotel</h3><p>A hotel project in IGNIVA’s hospitality portfolio.</p><a class="project-link" href="mailto:info@igniva.org?subject=IGNIVA%20Airport%20Hotel%20enquiry">Enquire about the hotel</a></div></article>
+        <article class="project" data-sector="technology"><img src="assets/workspace.webp" alt="Coworking concept for the proposed IGNIVA Tech Island" loading="lazy"><div><p class="eyebrow">Technology · Proposed concept</p><h3>IGNIVA Tech Island</h3><p>A proposed technology, workspace and lifestyle destination in Kochi.</p><a class="project-link" href="https://www.ignivatechisland.com/">Visit Tech Island</a></div></article>
+      </div>
     </div>
   </section>
   <section id="portfolio" class="section dark">
     <div class="wrap">
-      <p class="eyebrow">Business portfolio</p>
-      <h2>One group. <em>Five verticals.</em></h2>
+      <p class="eyebrow">Our businesses</p>
+      <h2>Five business verticals</h2>
       <div class="portfolio">
         <article><h3>Convention &amp; Trade Centres</h3><p>IGNIVA Calicut Trade Centre in Kozhikode and IGNIVA Cochin Trade Centre on Willingdon Island, Kochi, serve exhibitions, business conferences, corporate events, concerts and weddings.</p></article>
         <article><h3>Hotels &amp; Resorts</h3><p>Hotels, resorts and integrated hospitality developments that complement the group’s convention, tourism and commercial destinations.</p></article>
@@ -69,10 +74,23 @@
       </div>
     </div>
   </section>
-  <section class="quote dark" aria-label="Entrepreneurial vision">
+  <section id="leadership" class="section">
     <div class="wrap">
-      <blockquote>“Invest in the Vision.<br><em>Participate in the Future.”</em></blockquote>
-      <p>Nijesh Puthalath</p>
+      <p class="eyebrow">Leadership</p>
+      <div class="leader"><figure><img src="assets/nijesh-puthalath.webp" alt="Nijesh Puthalath" width="1000" height="1500" loading="lazy"><figcaption><strong>Nijesh Puthalath</strong><br>Chairman &amp; Managing Director</figcaption></figure><div class="leader-copy">
+        <h2>Building destinations that <em>bring business together.</em></h2>
+        <div>
+          <p>Nijesh Puthalath established IGNIVA Group in 2015. His work focuses on developing commercial assets and integrated destinations for business, commerce, entertainment and everyday life.</p>
+          <p>Based in Kerala, the group spans convention and trade centres, hospitality, logistics, commercial destinations and technology retail. His approach combines long-term asset creation with strategic investment, commercial partnerships and professional management.</p>
+          <p>An MBA graduate from London, he brings experience in corporate banking, financial services, business development and investments. He is active in the startup ecosystems of India and the UAE, with interests in strategic partnerships, early-stage funding, hospitality and brand expansion.</p>
+        </div>
+      </div>
+      </div>
+      <dl class="metrics">
+        <div><dt>2015</dt><dd>Group established</dd></div>
+        <div><dt>Kerala</dt><dd>Headquarters</dd></div>
+        <div><dt>Five</dt><dd>Business verticals</dd></div>
+      </dl>
     </div>
   </section>
   <section class="section" id="vision">
@@ -87,12 +105,12 @@
   </section>
   <section class="section dark" id="contact">
     <div class="wrap split">
-      <div><p class="eyebrow">Contact</p><h2>Connect with <em>IGNIVA Group.</em></h2></div>
+      <div><p class="eyebrow">Contact</p><h2>Talk to IGNIVA Group.</h2><p class="contact-copy">For venue bookings, commercial space and business partnerships, contact our team in Calicut.</p><a class="button" href="mailto:info@igniva.org?subject=IGNIVA%20Group%20enquiry">Email the team</a></div>
       <address><a href="mailto:info@igniva.org">info@igniva.org</a><a href="tel:+919349002200">+91 9349 002200</a><p>4th Floor, Emerald City Park<br>Mavoor Road, Calicut, Kerala</p></address>
     </div>
   </section>
 </main>
-<footer class="dark"><div class="wrap footer"><span>© IGNIVA Group</span><a href="#">Back to top</a></div></footer>
+<footer class="dark"><div class="wrap footer"><span>© IGNIVA Group</span><a href="#top">Back to top</a></div></footer>
 <script src="script.js" defer></script>
 </body>
 </html>
