@@ -33,26 +33,6 @@ button{cursor:pointer}
 .button:hover{background:#ffcf8b}
 .header-cta{justify-self:end}
 #menu{display:none;color:inherit;background:transparent;border:1px solid #ffffff70}
-.home-mast{background:var(--dark);color:#fffaf0;padding:clamp(2rem,5vw,5rem) 0 clamp(1.5rem,4vw,3rem)}
-.mast-copy{display:grid;grid-template-columns:1.35fr .65fr;gap:1.7rem;align-items:end;margin-bottom:2rem}
-.mast-copy em,.home-mast .eyebrow,.dark .eyebrow,.tile small{color:var(--accent)}
-.mast-copy .button,.detail-mast .button{margin-top:1rem}
-.mosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(2,clamp(175px,17vw,245px));gap:.45rem}
-.tile{display:flex;align-items:end;position:relative;isolation:isolate;overflow:hidden;text-decoration:none;background:#23433a;min-width:0}
-.tile img,.tile::after{position:absolute;inset:0;width:100%;height:100%}
-.tile img{z-index:-2;object-fit:cover;transition:transform .35s}
-.tile::after{content:"";z-index:-1;background:linear-gradient(0deg,#081512f7,transparent 78%)}
-.tile:hover img{transform:scale(1.04)}
-.tile:focus-visible{outline-offset:-4px}
-.tile span{padding:clamp(.65rem,1.5vw,1.3rem)}
-.tile strong,.tile small{display:block}
-.tile strong{font-size:clamp(.98rem,1.35vw,1.25rem);line-height:1.2}
-.tile small{line-height:1.3;margin-top:.2rem;font-size:.825rem}
-.hero-hotel{grid-column:span 2;grid-row:span 2}
-.hero-hotel img{object-position:center 45%}
-.hero-calicut{grid-column:span 2}
-.hero-cochin{grid-column:span 3}
-.hero-beach img,.hero-bazar img{object-position:center 45%}
 .sector-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:1.75rem;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .sector-grid a{padding:1.25rem;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-decoration:none}
 .sector-grid a:hover{background:#e3e9e0}
@@ -115,7 +95,7 @@ address p{margin-top:.75rem}
 .footer-main{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;padding-block:2rem}
 .footer-main p{margin-top:.6rem}
 .footer-base{padding-block:.85rem;border-top:1px solid #ffffff35;font-size:.9rem}
-@media(max-width:1000px){.wrap{width:calc(100% - 52px)}.mosaic{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,190px)}.hero-cochin{grid-column:span 3}}
+@media(max-width:1000px){.wrap{width:calc(100% - 52px)}}
 @media(max-width:760px){
 .wrap{width:calc(100% - 32px)}
 .bar{grid-template-columns:1fr auto auto;gap:.55rem;min-height:68px}
@@ -123,16 +103,28 @@ address p{margin-top:.75rem}
 #nav{grid-column:1/-1;grid-row:2;padding-bottom:.65rem}
 #nav.collapsible:not(.open){display:none}
 .header-cta{grid-column:3;grid-row:1}
-.mast-copy,.split,.business-detail .split,.ctc-feature,.leader,.profile-teaser{grid-template-columns:1fr}
-.mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:150px}
-.hero-hotel{grid-row:span 1}.hero-calicut{grid-column:span 1}.hero-cochin{grid-column:span 2}
+.split,.business-detail .split,.ctc-feature,.leader,.profile-teaser{grid-template-columns:1fr}
 .sector-grid,.listing-grid,.business-grid,.business-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
 .enquiry-band .button{justify-self:start}
 }
 @media(max-width:430px){
 .sector-grid a{padding:.8rem}
 .listing-grid,.projects,.business-gallery{grid-template-columns:1fr}
-.mosaic{grid-auto-rows:135px}
 .button,#menu{padding-inline:.65rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.telescope-hero{background:#101f35}
+.telescope-hero img{width:100%;height:auto;aspect-ratio:2 / 1;object-fit:cover}
+.home-milestones{padding-block:clamp(1.7rem,4vw,3.4rem);background:#faf8f2}
+.milestone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center}
+.milestone-grid div{display:flex;flex-direction:column;padding:.2rem .7rem}
+.milestone-grid div+div{border-left:1px solid var(--line)}
+.milestone-grid dd{order:-1;color:#873b28;font:400 clamp(2.15rem,7vw,5.8rem)/.97 "Instrument Serif",Georgia,serif;letter-spacing:-.035em;font-variant-numeric:lining-nums}
+.milestone-grid dt{margin-top:.5rem;color:var(--ink);font-weight:600;font-size:clamp(.875rem,1.55vw,1.125rem);line-height:1.25}
+@media(max-width:760px){
+.telescope-hero img{aspect-ratio:10 / 11;object-position:50% center}
+.milestone-grid{grid-template-columns:1fr .75fr 1.3fr}
+.milestone-grid div{padding-inline:.25rem}
+}
