@@ -102,3 +102,31 @@ footer.dark { background: var(--deep); }
   .header-cta { padding-inline: .55rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.project > .project-brand {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.73;
+  flex: none;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: var(--deep);
+}
+.project-brand img {
+  width: min(65%, 270px);
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: transparent;
+}
+.project img[src$="airport-hotel.webp"] { object-position: center 69%; }
+
+.ctc-hero .hero-image { object-position: center 64%; }
+.ctc-hero h1 { max-width: 12ch; }
+.ctc-feature { display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: center; }
+.ctc-feature h2 { margin-bottom: 1rem; }
+.ctc-feature p + p { margin-top: .75rem; }
+.ctc-feature img { width: 100%; height: auto; }
+.ctc-feature figcaption { margin-top: .55rem; font-size: .9rem; color: #d7e0d8; }
+.ctc-note { margin-top: 1.2rem; color: var(--muted); }
+#contact:not(.dark) { background: #e9eee7; }
+@media (max-width: 760px) { .ctc-feature { grid-template-columns: 1fr; } }
