@@ -128,3 +128,36 @@ address p{margin-top:.75rem}
 .milestone-grid{grid-template-columns:1fr .75fr 1.3fr}
 .milestone-grid div{padding-inline:.25rem}
 }
+
+.site-header .bar{grid-template-columns:1fr auto 1fr}
+#nav a,.project-menu summary,.header-cta{font:500 1rem/1.25 "DM Sans",system-ui,sans-serif}
+#nav>a,.project-menu summary,.site-header .header-cta{border:1px solid #86968e;padding:.7rem .85rem}
+.project-menu{position:relative}
+.project-menu summary{cursor:pointer}
+.project-menu-links{position:absolute;z-index:4;top:calc(100% + .35rem);left:0;width:min(290px,85vw);max-height:55dvh;overflow:auto;background:var(--dark);border:1px solid #86968e;padding:.4rem}
+#nav .project-menu-links a{display:block;padding:.55rem .7rem}
+.inline-brand{display:inline-block;width:auto;height:.8em;max-width:7ch;vertical-align:-.04em;object-fit:contain;filter:brightness(.22)}
+.dark .inline-brand,.site-header .inline-brand,.site-footer .inline-brand{filter:none}
+.venue-mark{position:relative;display:inline-flex;align-items:flex-start;max-width:min(100%,340px);vertical-align:middle}
+.venue-mark img{width:100%;height:auto}
+.venue-mark sup{color:#947537;font:600 clamp(.65rem,1.4vw,1.2rem) system-ui;position:absolute;left:97%;top:0}
+.card-copy .venue-mark{width:min(80%,190px)}
+.business-grid:has(.tenant){grid-template-columns:repeat(2,minmax(0,1fr))}
+.tenant{display:grid;grid-template-columns:minmax(60px,105px) minmax(0,1fr);gap:1rem;align-items:center;background:#f8f5f0}
+.tenant img{width:100%;max-height:76px;object-fit:contain;mix-blend-mode:multiply}
+.landing{height:100svh;display:flex;flex-direction:column}
+.landing .site-header{position:relative;z-index:3;flex:none}
+.landing main{min-height:0;flex:1;display:grid;grid-template-rows:minmax(0,1fr) auto}
+.landing .telescope-hero{min-height:0}
+.landing .telescope-hero img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain}
+.landing .home-milestones{padding-block:clamp(.7rem,2.8vh,2.2rem)}
+.landing .milestone-grid dd{font-size:clamp(2.05rem,min(6vw,8vh),5.2rem)}
+@media(max-width:760px){
+ .site-header .bar{grid-template-columns:1fr auto auto}
+ #nav.collapsible.open{position:absolute;top:100%;left:0;right:0;background:var(--dark);padding:.75rem 1rem;border-bottom:1px solid #86968e;max-height:70svh;overflow:auto}
+ .project-menu-links{position:static;width:min(290px,85vw)}
+ .business-grid:has(.tenant){grid-template-columns:1fr}
+ #nav a,.project-menu summary,.header-cta{font-size:.9rem}
+}
+
+.site-header{position:relative;z-index:3}
