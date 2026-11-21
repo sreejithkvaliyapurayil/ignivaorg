@@ -130,3 +130,73 @@ footer.dark { background: var(--deep); }
 .ctc-note { margin-top: 1.2rem; color: var(--muted); }
 #contact:not(.dark) { background: #e9eee7; }
 @media (max-width: 760px) { .ctc-feature { grid-template-columns: 1fr; } }
+
+.business-nav {
+  margin-top: 1.5rem;
+  gap: .65rem 1.5rem;
+}
+.business-nav a, .business-link { color: var(--gold); text-decoration: underline; }
+.business-detail { border-top: 1px solid #ffffff38; padding-top: 2rem; margin-top: 2.5rem; }
+.business-detail h3 { font-size: clamp(1.9rem, 4vw, 3.65rem); margin-top: .45rem; }
+.business-detail h4 { margin: 1.4rem 0 .55rem; color: var(--gold); }
+.business-detail .split { align-items: start; }
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: 1rem;
+}
+.business-grid > * { padding: 1rem; border: 1px solid #ffffff38; }
+.business-grid strong, .business-grid span { display: block; }
+.business-grid strong { color: var(--gold); }
+.business-grid span { color: #d7e0d8; }
+.business-grid a { text-underline-offset: .25em; }
+.partner-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.tech-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.business-list { display: flex; flex-wrap: wrap; gap: .55rem; list-style: none; padding: 0; margin: 1.2rem 0; }
+.business-list li { border: 1px solid #e8ca9170; padding: .4rem .75rem; }
+.business-stat { margin-top: 1rem; }
+.business-stat strong { color: var(--gold); font: 500 clamp(2.4rem, 6vw, 4.5rem)/1 "Playfair Display", Georgia, serif; margin-right: .35em; }
+.vision-principles { margin-block: 1.6rem; }
+.vision-copy { align-items: start; }
+.dark .vision-copy p { color: #d7e0d8; }
+@media (max-width: 900px) { .partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .business-grid { grid-template-columns: 1fr; } }
+
+.home-hero { background: var(--deep); padding: clamp(2.4rem, 6vw, 5rem) 0 clamp(2.6rem, 5vw, 4rem); }
+.home-intro { display: grid; grid-template-columns: 1.4fr .6fr; gap: 1.5rem 3rem; align-items: end; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+.home-intro h1 { font-size: clamp(2.65rem, 6.5vw, 6.5rem); margin-top: .65rem; }
+.home-intro em { color: var(--gold); }
+.home-intro .button { margin-top: .9rem; }
+.home-collage { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(3, clamp(145px, 15vw, 220px)); gap: .55rem; }
+.collage-tile { position: relative; display: flex; align-items: end; min-width: 0; isolation: isolate; overflow: hidden; background: var(--forest); color: white; text-decoration: none; }
+.collage-tile img, .collage-tile::after { position: absolute; inset: 0; width: 100%; height: 100%; }
+.collage-tile img { object-fit: cover; z-index: -2; transition: transform .3s ease; }
+.collage-tile::after { content: ""; z-index: -1; background: linear-gradient(0deg, #071810f2, transparent 72%); }
+.collage-tile:hover img { transform: scale(1.045); }
+.collage-tile > span { padding: clamp(.6rem, 2vw, 1.25rem); line-height: 1.28; }
+.collage-tile strong, .collage-tile small { display: block; }
+.collage-tile strong { font-family: "Playfair Display", Georgia, serif; font-size: clamp(1.05rem, 2vw, 1.65rem); font-weight: 500; }
+.collage-tile small { color: #f3dfb8; margin-top: .3rem; font-size: .8125rem; }
+.collage-tile:focus-visible { outline-offset: -4px; }
+.tile-hotel { grid-column: span 2; grid-row: span 2; }
+.tile-hotel img { object-position: center 40%; }
+.tile-calicut { grid-column: span 2; }
+.tile-cochin { grid-column: span 3; }
+.tile-beach img { object-position: center 54%; }
+.tile-bazar img { object-position: center 42%; }
+.business-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; margin-top: 1.6rem; }
+.business-gallery:has(> :only-child) { max-width: 750px; }
+.business-gallery figure { border: 1px solid #ffffff38; }
+.business-gallery a { display: block; }
+.business-gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--deep); }
+.business-gallery figcaption { padding: .65rem .9rem; }
+.business-gallery figcaption strong, .business-gallery figcaption span { display: block; }
+.business-gallery figcaption span { color: var(--gold); font-size: .875rem; }
+@media (max-width: 760px) {
+  .home-intro { grid-template-columns: 1fr; }
+  .home-collage { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: clamp(140px, 30vw, 220px); }
+  .tile-hotel { grid-row: span 2; }
+  .tile-cochin { grid-column: span 2; }
+}
+@media (prefers-reduced-motion: reduce) { .collage-tile img { transition: none; } }
