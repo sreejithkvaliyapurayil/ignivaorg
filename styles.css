@@ -194,10 +194,24 @@ address p{margin-top:.75rem}
 .showcase-slide>a>img{width:100%;height:100%;object-fit:cover}
 .showcase-caption{position:absolute;left:clamp(.65rem,4vw,3.5rem);bottom:3.7rem;padding:.5rem .8rem;background:#101a17eb;line-height:1.3}
 .showcase-caption span{display:block;font-size:.8rem;margin-top:.2rem}
-.showcase-controls{position:absolute;z-index:2;right:clamp(.65rem,4vw,3.5rem);bottom:.55rem;display:flex;align-items:center;gap:.3rem;background:#101a17eb;color:#fff;padding:.2rem .45rem;border:1px solid #ffffff65}
-.showcase-controls button{min-width:44px;min-height:44px;background:transparent;color:inherit;border:0;padding:0 .35rem}
-.showcase-controls button:hover{background:#ffffff29}
-.showcase-controls span{font-size:.8rem;min-width:2.8rem;text-align:center}
-.showcase-slide.entering{animation:showcase-in .65s ease both}
-@keyframes showcase-in{from{opacity:.15}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.showcase-slide.entering{animation:none}}
+
+.showcase-loading{position:absolute;inset:0;z-index:-1;background:#101f35 url("assets/igniva-group.png") center / clamp(124px,20vw,260px) auto no-repeat}
+.opening-ready .showcase-loading{display:none}
+.telescope-hero img{position:relative;display:block}
+.landing .site-header{background:#080c10;border-bottom:1px solid #ffffff25}
+.landing .site-header .bar{min-height:clamp(76px,9vw,116px);width:min(1520px,calc(100% - 8vw));grid-template-columns:minmax(120px,1fr) auto auto;gap:clamp(1rem,3vw,3.25rem)}
+.landing #nav{gap:clamp(.8rem,2.5vw,2.75rem)}
+.landing #nav>a,.landing .project-menu summary{border:0;padding:.7rem 0}
+.landing #nav [aria-current]{color:#f2ba68}
+.landing .header-cta{background:transparent;color:#fff;border:0;padding:.65rem 0}
+.landing .header-cta:hover{color:#f2ba68}
+.landing .showcase-caption{bottom:clamp(.8rem,3vw,2.25rem)}
+@media(max-width:760px){
+ .landing .site-header{position:absolute;top:0;inset-inline:0;background:linear-gradient(#080c10e8,#080c1000);border:0}
+ .landing .site-header .bar{min-height:72px;grid-template-columns:1fr auto auto;gap:.85rem}
+ .landing .brand img{width:clamp(105px,29vw,150px)}
+ .landing #menu{border:0;min-width:44px;padding:.6rem}
+ .landing-menu-icon{width:25px;height:15px;display:block;border-block:2px solid currentColor;position:relative}
+ .landing-menu-icon::after{content:"";position:absolute;top:50%;left:0;width:65%;border-top:2px solid currentColor;transform:translateY(-50%)}
+ .landing #nav.collapsible.open{max-height:calc(100svh - 90px);padding:1rem 4vw}
+}

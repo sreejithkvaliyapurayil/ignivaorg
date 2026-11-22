@@ -10,12 +10,13 @@
 <body class="landing"><a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap bar">
 <a class="brand" href="index.html" aria-label="IGNIVA Group homepage"><img src="assets/igniva-group.png" alt="IGNIVA Group" width="184" height="49"></a>
-<button id="menu" aria-controls="nav" aria-expanded="false" hidden>Menu</button><nav id="nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><details class="project-menu"><summary>Our developments</summary><div class="project-menu-links"><a href="calicut-trade-centre.html">Calicut Trade Centre</a><a href="cochin-trade-centre.html">Cochin Trade Centre</a><a href="airport-hotel.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Airport Hotel</a><a href="beach-bay.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Calicut Beach Bay</a><a href="4n-bazar.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> 4N Bazar Tech Mall</a><a href="logistics-hub.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Logistics Hub</a><a href="https://www.ignivatechisland.com/"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Tech Island</a><a href="https://www.ignivatechisland.com/#infrastructure">Kochi Data Centre</a><a href="projects.html">All developments</a></div></details><a href="about.html">About <img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"></a></nav>
+<button id="menu" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false" hidden><span class="landing-menu-icon" aria-hidden="true"></span></button><nav id="nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><details class="project-menu"><summary>Our developments</summary><div class="project-menu-links"><a href="calicut-trade-centre.html">Calicut Trade Centre</a><a href="cochin-trade-centre.html">Cochin Trade Centre</a><a href="airport-hotel.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Airport Hotel</a><a href="beach-bay.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Calicut Beach Bay</a><a href="4n-bazar.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> 4N Bazar Tech Mall</a><a href="logistics-hub.html"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Logistics Hub</a><a href="https://www.ignivatechisland.com/"><img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"> Tech Island</a><a href="https://www.ignivatechisland.com/#infrastructure">Kochi Data Centre</a><a href="projects.html">All developments</a></div></details><a href="about.html">About <img class="inline-brand" src="assets/igniva-group.png" alt="IGNIVA®"></a></nav>
 <a class="button header-cta" href="contact.html">Contact Us</a></div></header>
 <main id="main">
   <h1 class="sr-only">IGNIVA Group</h1>
   <section class="home-showcase" aria-label="IGNIVA project slideshow" aria-roledescription="carousel">
   <figure class="telescope-hero showcase-slide">
+    <div class="showcase-loading" aria-hidden="true"></div>
     <img src="assets/moonlit-telescope.webp"
          srcset="assets/moonlit-telescope-960.webp 960w, assets/moonlit-telescope.webp 1774w"
          sizes="(max-width: 760px) 220vw, 100vw"
@@ -23,38 +24,32 @@
          alt="A smiling child looks through a slim blue telescope beneath a crescent moon.">
   </figure>
     <figure class="showcase-slide" hidden>
-      <a href="calicut-trade-centre.html"><img src="assets/showcase/calicut.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>Calicut Trade Centre</strong><span>AI visualisation</span></div></a>
+      <a href="calicut-trade-centre.html"><img src="assets/showcase/calicut.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>Calicut Trade Centre</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="cochin-trade-centre.html"><img src="assets/showcase/cochin.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>Cochin Trade Centre</strong><span>AI visualisation</span></div></a>
+      <a href="cochin-trade-centre.html"><img src="assets/showcase/cochin.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>Cochin Trade Centre</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="airport-hotel.html"><img src="assets/showcase/hotel.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>IGNIVA Airport Hotel</strong><span>AI visualisation</span></div></a>
+      <a href="airport-hotel.html"><img src="assets/showcase/hotel.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>IGNIVA Airport Hotel</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="beach-bay.html"><img src="assets/showcase/beach.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>IGNIVA Calicut Beach Bay</strong><span>AI visualisation</span></div></a>
+      <a href="beach-bay.html"><img src="assets/showcase/beach.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>IGNIVA Calicut Beach Bay</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="4n-bazar.html"><img src="assets/showcase/bazar.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>4N Bazar Tech Mall</strong><span>AI visualisation</span></div></a>
+      <a href="4n-bazar.html"><img src="assets/showcase/bazar.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>4N Bazar Tech Mall</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="logistics-hub.html"><img src="assets/showcase/whirlpool.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>IGNIVA Logistics Hub · Whirlpool</strong><span>AI visualisation</span></div></a>
+      <a href="logistics-hub.html"><img src="assets/showcase/whirlpool.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>IGNIVA Logistics Hub · Whirlpool</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="logistics-hub.html"><img src="assets/showcase/myg.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>IGNIVA Logistics Hub · myG</strong><span>AI visualisation</span></div></a>
+      <a href="logistics-hub.html"><img src="assets/showcase/myg.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>IGNIVA Logistics Hub · myG</strong><span>AI visualisation</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="https://www.ignivatechisland.com/"><img src="assets/showcase/tech.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>IGNIVA Tech Island</strong><span>AI visualisation · Proposed development</span></div></a>
+      <a href="https://www.ignivatechisland.com/"><img src="assets/showcase/tech.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>IGNIVA AI IT Park</strong><span>AI visualisation · Proposed development</span></div></a>
     </figure>
     <figure class="showcase-slide" hidden>
-      <a href="https://www.ignivatechisland.com/#infrastructure"><img src="assets/showcase/data.webp" alt="" loading="lazy" decoding="async"><div class="showcase-caption"><strong>Kochi Data Centre</strong><span>AI visualisation · Proposed development</span></div></a>
+      <a href="https://www.ignivatechisland.com/#infrastructure"><img src="assets/showcase/data.webp" alt="" loading="eager" fetchpriority="low" decoding="async"><div class="showcase-caption"><strong>Kochi Data Centre</strong><span>AI visualisation · Proposed development</span></div></a>
     </figure>
-    <div class="showcase-controls" hidden>
-      <button type="button" data-previous aria-label="Previous slide">‹</button>
-      <button type="button" data-rotation>Pause</button>
-      <button type="button" data-next aria-label="Next slide">›</button>
-      <span data-position aria-live="off"></span>
-    </div>
   </section>
   <section class="home-milestones" aria-label="IGNIVA Group at a glance">
     <dl class="wrap milestone-grid">

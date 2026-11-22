@@ -57,67 +57,46 @@ if (form) {
 const showcase = document.querySelector('.home-showcase');
 if (showcase) {
   const slides = Array.from(showcase.querySelectorAll('.showcase-slide'));
-  const controls = showcase.querySelector('.showcase-controls');
-  const rotation = controls.querySelector('[data-rotation]');
-  const position = controls.querySelector('[data-position]');
+  const images = slides.map((slide) => slide.querySelector('img'));
+  const opening = images[0];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  let index = 0;
+  let current = 0;
   let timer;
-  let playing = !reducedMotion.matches;
-  let hovered = false;
+  let openingReady = false;
 
   function schedule() {
     clearTimeout(timer);
-    if (playing && !hovered && !document.hidden) {
-      timer = setTimeout(() => showSlide(index + 1), 6500);
+    if (openingReady && !document.hidden && !reducedMotion.matches &&
+        !showcase.contains(document.activeElement)) {
+      timer = setTimeout(advance, 1000);
     }
   }
 
-  function showSlide(next) {
-    slides[index].hidden = true;
-    slides[index].classList.remove('entering');
-    index = (next + slides.length) % slides.length;
-    const slide = slides[index];
-    slide.hidden = false;
-    slide.classList.add('entering');
-    position.textContent = (index + 1) + ' / ' + slides.length;
-    schedule();
-  }
-
-  function setPlaying(value) {
-    playing = value;
-    rotation.textContent = playing ? 'Pause' : 'Play';
-    position.setAttribute('aria-live', playing ? 'off' : 'polite');
-    schedule();
-  }
-
-  showcase.addEventListener('focusin', (event) => {
-    if (!showcase.contains(event.relatedTarget) && event.target.matches(':focus-visible')) setPlaying(false);
-  });
-  showcase.addEventListener('pointerenter', (event) => {
-    if (event.pointerType === 'mouse') {
-      hovered = true;
-      schedule();
+  function advance() {
+    let next = (current + 1) % slides.length;
+    while (next !== current && images[next].complete && !images[next].naturalWidth) {
+      next = (next + 1) % slides.length;
     }
-  });
-  showcase.addEventListener('pointerleave', () => {
-    hovered = false;
+    const image = images[next];
+    if (image.complete && image.naturalWidth) {
+      slides[current].hidden = true;
+      slides[next].hidden = false;
+      current = next;
+    }
     schedule();
-  });
-  rotation.addEventListener('click', () => setPlaying(!playing));
-  controls.querySelector('[data-previous]').addEventListener('click', () => {
-    setPlaying(false);
-    showSlide(index - 1);
-  });
-  controls.querySelector('[data-next]').addEventListener('click', () => {
-    setPlaying(false);
-    showSlide(index + 1);
-  });
-  reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) setPlaying(false);
-  });
+  }
+
+  function start() {
+    openingReady = true;
+    if (opening.naturalWidth) showcase.classList.add('opening-ready');
+    schedule();
+  }
+
+  opening.addEventListener('load', start, { once: true });
+  opening.addEventListener('error', start, { once: true });
+  if (opening.complete) start();
+  reducedMotion.addEventListener('change', schedule);
   document.addEventListener('visibilitychange', schedule);
-  position.textContent = '1 / ' + slides.length;
-  controls.hidden = false;
-  setPlaying(playing);
+  showcase.addEventListener('focusin', schedule);
+  showcase.addEventListener('focusout', () => setTimeout(schedule, 0));
 }
