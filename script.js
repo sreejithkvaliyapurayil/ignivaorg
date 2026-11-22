@@ -68,7 +68,7 @@ if (showcase) {
     clearTimeout(timer);
     if (openingReady && !document.hidden && !reducedMotion.matches &&
         !showcase.contains(document.activeElement)) {
-      timer = setTimeout(advance, 1000);
+      timer = setTimeout(advance, 2000);
     }
   }
 
