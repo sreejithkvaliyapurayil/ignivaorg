@@ -236,3 +236,10 @@ address p{margin-top:.75rem}
  .venue-local-nav{grid-column:1/-1;grid-row:2;font-size:.875rem}
  .venue-header .header-cta{grid-column:2}
 }
+
+.showcase-tenant-mark{display:none}
+@media(max-width:760px){
+ .showcase-slide>.showcase-myg>img{object-position:80% center}
+ .showcase-myg .showcase-tenant-mark{display:block;position:absolute;right:1rem;bottom:4.2rem;width:76px;padding:.35rem .55rem;background:#f8f5f0;border-radius:4px}
+ .showcase-tenant-mark img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+}
