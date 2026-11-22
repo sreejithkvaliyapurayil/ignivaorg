@@ -250,3 +250,9 @@ address p{margin-top:.75rem}
 .showcase-slide picture>img{width:100%;height:100%;object-fit:cover}
 
 .telescope-hero .showcase-caption{color:#fff}
+
+@media (min-width: 1024px) {
+  .leader img[src="assets/nijesh-puthalath.webp"] {
+    object-position: center 15%;
+  }
+}
