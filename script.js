@@ -50,7 +50,7 @@ if (form) {
     event.preventDefault();
     const subject = 'IGNIVA Group enquiry — ' + form.querySelector('#interest').value;
     const body = 'Name: ' + form.querySelector('#name').value.trim() + '\n\n' + form.querySelector('#message').value.trim();
-    location.href = 'mailto:info@igniva.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    location.href = 'mailto:info@ignivagroup.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 }
 
