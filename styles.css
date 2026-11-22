@@ -149,7 +149,7 @@ address p{margin-top:.75rem}
 .landing .site-header{position:relative;z-index:3;flex:none}
 .landing main{min-height:0;flex:1;display:grid;grid-template-rows:minmax(0,1fr) auto}
 .landing .telescope-hero{min-height:0}
-.landing .telescope-hero img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain}
+.landing .telescope-hero img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover}
 .landing .home-milestones{padding-block:clamp(.7rem,2.8vh,2.2rem)}
 .landing .milestone-grid dd{font-size:clamp(2.05rem,min(6vw,8vh),5.2rem)}
 @media(max-width:760px){
@@ -239,7 +239,12 @@ address p{margin-top:.75rem}
 
 .showcase-tenant-mark{display:none}
 @media(max-width:760px){
- .showcase-slide>.showcase-myg>img{object-position:80% center}
- .showcase-myg .showcase-tenant-mark{display:block;position:absolute;right:1rem;bottom:4.2rem;width:76px;padding:.35rem .55rem;background:#f8f5f0;border-radius:4px}
+ .showcase-myg picture>img{object-position:center}
+ .showcase-myg .showcase-tenant-mark{display:block;position:absolute;left:clamp(.65rem,4vw,3.5rem);bottom:4.2rem;width:76px;padding:.35rem .55rem;background:#f8f5f0;border-radius:4px}
  .showcase-tenant-mark img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
 }
+
+@media(max-width:760px){.showcase-slide>a>img[src$="ai-it-park-waterfront-recreation.webp"]{object-fit:contain}}
+
+.showcase-slide picture{display:block;width:100%;height:100%}
+.showcase-slide picture>img{width:100%;height:100%;object-fit:cover}
