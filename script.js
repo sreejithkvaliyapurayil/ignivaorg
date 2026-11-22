@@ -53,3 +53,71 @@ if (form) {
     location.href = 'mailto:info@igniva.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 }
+
+const showcase = document.querySelector('.home-showcase');
+if (showcase) {
+  const slides = Array.from(showcase.querySelectorAll('.showcase-slide'));
+  const controls = showcase.querySelector('.showcase-controls');
+  const rotation = controls.querySelector('[data-rotation]');
+  const position = controls.querySelector('[data-position]');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let index = 0;
+  let timer;
+  let playing = !reducedMotion.matches;
+  let hovered = false;
+
+  function schedule() {
+    clearTimeout(timer);
+    if (playing && !hovered && !document.hidden) {
+      timer = setTimeout(() => showSlide(index + 1), 6500);
+    }
+  }
+
+  function showSlide(next) {
+    slides[index].hidden = true;
+    slides[index].classList.remove('entering');
+    index = (next + slides.length) % slides.length;
+    const slide = slides[index];
+    slide.hidden = false;
+    slide.classList.add('entering');
+    position.textContent = (index + 1) + ' / ' + slides.length;
+    schedule();
+  }
+
+  function setPlaying(value) {
+    playing = value;
+    rotation.textContent = playing ? 'Pause' : 'Play';
+    position.setAttribute('aria-live', playing ? 'off' : 'polite');
+    schedule();
+  }
+
+  showcase.addEventListener('focusin', (event) => {
+    if (!showcase.contains(event.relatedTarget) && event.target.matches(':focus-visible')) setPlaying(false);
+  });
+  showcase.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse') {
+      hovered = true;
+      schedule();
+    }
+  });
+  showcase.addEventListener('pointerleave', () => {
+    hovered = false;
+    schedule();
+  });
+  rotation.addEventListener('click', () => setPlaying(!playing));
+  controls.querySelector('[data-previous]').addEventListener('click', () => {
+    setPlaying(false);
+    showSlide(index - 1);
+  });
+  controls.querySelector('[data-next]').addEventListener('click', () => {
+    setPlaying(false);
+    showSlide(index + 1);
+  });
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) setPlaying(false);
+  });
+  document.addEventListener('visibilitychange', schedule);
+  position.textContent = '1 / ' + slides.length;
+  controls.hidden = false;
+  setPlaying(playing);
+}

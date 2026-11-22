@@ -161,3 +161,43 @@ address p{margin-top:.75rem}
 }
 
 .site-header{position:relative;z-index:3}
+
+.venue-cover{position:relative;isolation:isolate;min-height:clamp(370px,40vw,820px);background:#183037}
+.venue-cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:-2}
+.venue-cover::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#071815d9 0,transparent 42%);pointer-events:none}
+.site-header.venue-header{background:transparent;border:0}
+.venue-header .bar{grid-template-columns:1fr auto auto}
+.venue-brand{position:relative;display:inline-flex;justify-self:start;align-items:flex-start;padding:.42rem .55rem;background:#fffffff5;width:clamp(88px,8vw,126px)}
+.venue-brand img{width:100%}
+.venue-brand sup{position:absolute;right:.35rem;top:.2rem;color:#876a30;font-size:.65rem}
+.venue-header #nav>a{border:0;padding:.55rem .2rem;color:white}
+.venue-header #nav>a:hover{color:var(--accent)}
+.venue-header .header-cta{background:#101815;color:white;border-color:#ffffff68}
+.venue-header .header-cta:hover{background:#24332e}
+.venue-cover-caption{position:absolute;right:clamp(1rem,4vw,3rem);bottom:1rem;color:white;background:#121b18d9;padding:.25rem .6rem;font-size:.875rem}
+@media(max-width:760px){
+ .venue-cover{min-height:clamp(340px,72vw,480px)}
+ .venue-header .bar{padding-block:.45rem}
+ .venue-header #nav.collapsible.open{background:var(--dark)}
+}
+
+.bazar-mast h1{font-size:clamp(1.65rem,4.55vw,5rem);white-space:nowrap}
+.bazar-mast figure img{aspect-ratio:4 / 5;max-height:660px;object-position:center 47%}
+.card-media img[src$="bazar-frontage.webp"]{object-position:center 44%}
+
+.detail-mast img[src$="beach-bay-feature.webp"],.card-media img[src$="beach-bay-feature.webp"]{object-position:center 44%}
+
+.home-showcase{min-height:0;position:relative;isolation:isolate;background:#101f35}
+.showcase-slide{position:absolute;inset:0;margin:0}
+.showcase-slide>a{display:block;width:100%;height:100%;position:relative;color:#fff}
+.showcase-slide>a:focus-visible{outline-offset:-5px}
+.showcase-slide>a>img{width:100%;height:100%;object-fit:cover}
+.showcase-caption{position:absolute;left:clamp(.65rem,4vw,3.5rem);bottom:3.7rem;padding:.5rem .8rem;background:#101a17eb;line-height:1.3}
+.showcase-caption span{display:block;font-size:.8rem;margin-top:.2rem}
+.showcase-controls{position:absolute;z-index:2;right:clamp(.65rem,4vw,3.5rem);bottom:.55rem;display:flex;align-items:center;gap:.3rem;background:#101a17eb;color:#fff;padding:.2rem .45rem;border:1px solid #ffffff65}
+.showcase-controls button{min-width:44px;min-height:44px;background:transparent;color:inherit;border:0;padding:0 .35rem}
+.showcase-controls button:hover{background:#ffffff29}
+.showcase-controls span{font-size:.8rem;min-width:2.8rem;text-align:center}
+.showcase-slide.entering{animation:showcase-in .65s ease both}
+@keyframes showcase-in{from{opacity:.15}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.showcase-slide.entering{animation:none}}
