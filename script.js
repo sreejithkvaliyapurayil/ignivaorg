@@ -100,3 +100,45 @@ if (showcase) {
   showcase.addEventListener('focusin', schedule);
   showcase.addEventListener('focusout', () => setTimeout(schedule, 0));
 }
+
+const searchButton = document.querySelector('#open-site-search');
+if (searchButton) {
+  const dialog = document.querySelector('#group-search');
+  const query = dialog.querySelector('#group-search-query');
+  const results = dialog.querySelector('#group-search-results');
+  const status = dialog.querySelector('#group-search-status');
+  const pages = [...nav.querySelectorAll('a:not([aria-current])')]
+    .filter((link) => new URL(link.href).hostname !== 'www.instagram.com')
+    .map((link) => ({
+      label: [link.querySelector('img')?.alt, link.textContent.trim()].filter(Boolean).join(' '),
+      url: link.getAttribute('href'),
+    }));
+  pages.push(
+    { label: 'Our Leadership · Nijesh Puthalath', url: 'about.html#leadership', keywords: 'chairman managing director founder' },
+    { label: 'The IGNIVA Journey', url: 'about.html#journey', keywords: 'history milestones story 2015' },
+  );
+
+  function updateSearch() {
+    const terms = query.value.trim().toLowerCase().split(/\s+/);
+    const matches = pages.filter(({ label, keywords = '' }) =>
+      terms.every((term) => (label + ' ' + keywords).toLowerCase().includes(term))
+    );
+    results.replaceChildren(...matches.map(({ label, url }) => {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = url;
+      link.textContent = label;
+      item.append(link);
+      return item;
+    }));
+    status.textContent = matches.length ? '' : 'No matches. Try a project, page or person.';
+  }
+
+  searchButton.hidden = false;
+  searchButton.addEventListener('click', () => {
+    updateSearch();
+    dialog.showModal();
+    query.focus();
+  });
+  query.addEventListener('input', updateSearch);
+}
