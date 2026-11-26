@@ -261,3 +261,13 @@ address p{margin-top:.75rem}
 body:not(.landing) :is(h1,h2,h3,.business-stat strong,.metrics dt,.milestone-grid dd,.venue-mark sup){
   font-family:"DM Sans",system-ui,sans-serif;
 }
+
+/* Keep inline wordmarks proportional to the surrounding text on inner pages. */
+body:not(.landing) img.inline-brand{
+  width:auto;
+  height:.62em;
+  max-width:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  vertical-align:baseline;
+}
