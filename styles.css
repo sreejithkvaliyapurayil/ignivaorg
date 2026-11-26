@@ -256,3 +256,8 @@ address p{margin-top:.75rem}
     object-position: center 15%;
   }
 }
+
+/* Use the existing sans-serif family throughout the inner pages. */
+body:not(.landing) :is(h1,h2,h3,.business-stat strong,.metrics dt,.milestone-grid dd,.venue-mark sup){
+  font-family:"DM Sans",system-ui,sans-serif;
+}
